@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <script src="https://kit.fontawesome.com/e2a0893e64.js" crossorigin="anonymous"></script>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <title>Dushime Brother</title>
+     
+</head>
+<body>
+     <header>
+          <div class="logo-container">
+               <a href="#hero"><img src="./Assets/Dushime-removebg-preview.png" alt=""></a>
+          </div>
+          <div class="nav-container">
+               <ul>
+                    <li><a href="#about">About me</a></li>
+                    <li><a href="#school">Auca</a></li>
+                    <li><a href="#services">What I do</a></li>
+                    <li><a href="#Works">My Works</a></li>
+                    <li><a onclick="hireMe()" href="#Contact">Hire Me</a></li>
+                    <li><a href="./Assets/Dushime Brother Resume.pdf" target="_blank">CV</a></li>
+               </ul>
+          </div>
+     </header>
+     <main>
+          <img src="./Assets/Dushime-removebg-preview.png" class="myImage" alt="">
+          <section class="hero" id="hero">
+               <i>Hi, my name is</i>
+               <h1>Dushime Brother</h1>
+               <h2>I develop software and <span>web apps</span></h2>
+               <p>I am a professional software engineer and webdeveloper specialising in data science and cloud computing. I help small and large businesses in digital transformation and get their firms available on the web.</p>
+               <button>Hire Me</button>
+          </section>
+          <section id="about" class="About">
+               <div class="about">
+                    <h2>About Me</h2>
+                    <p><span>Welcome to my portfolio website!</span> <br> My name is Dushime Brother, and I am a passionate software engineer specializing in cloud computing, web development, data science, and embedded system development.</p>
+                    <p>With a deep-rooted curiosity and dedication to my craft, I thrive in leveraging cutting-edge technologies to create innovative solutions. Whether it's architecting scalable cloud applications, crafting intuitive web interfaces, extracting valuable insights from data, or designing efficient embedded systems, I love diving into complex challenges and delivering high-quality results.</p>
+                    <p>Throughout my career, I have honed my skills in various programming languages and frameworks, allowing me to adapt to diverse project requirements and collaborate seamlessly within multidisciplinary teams. I'm a firm believer in continuous learning and staying up-to-date with the latest industry trends, which enables me to provide forward-thinking solutions to real-world problems.</p>
+                    <p>Beyond my technical expertise, I possess strong analytical and problem-solving abilities, enabling me to approach complex issues with a structured and detail-oriented mindset. I thrive in collaborative environments, where I can contribute my ideas and work collectively towards achieving project objectives.</p>
+                    <p>I am excited to showcase my portfolio and share the projects I have worked on. Please take a moment to explore my website, where you can find examples of my work, details about my skills and experiences, and how to get in touch with me. I look forward to connecting with you and discussing potential collaborations.</p>
+                    <p>Feel free to contact me </p>
+               </div>
+          </section>
+          <section id="school" class="progress">
+               
+          </section>
+          <section class="register">
+               <h2>Register Here</h2>
+               <form>
+                    <div class="group">
+                         <label for="name">Name:</label>
+                         <input type="text" name="name" id="name">
+                    </div>
+                    <div class="group">
+                         <label for="email">Email:</label>
+                         <input type="email" name="email" id="email">
+                    </div>
+                    <div class="group">
+                         <label for="phone">Phone:</label>
+                         <input type="text" name="phone" id="phone">
+                    </div>
+                    <div class="group">
+                         <button type="submit">Submit</button>
+                    </div>
+               </form>
+          </section>
+          <section class="services" id="services">
+               <h2>Services</h2>
+               <table>
+                    <thead>
+                         <tr>
+                              <td>S.N</td>
+                              <td>Service Name</td>
+                              <td>Venue</td>
+                              <td>Time</td>
+                         </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                              <td>01</td>
+                              <td>Web Design</td>
+                              <td>M Peace Plaza <br> <span>G Floor Room 201</span></td>
+                              <td>24/7</td>
+                         </tr>
+                         <tr>
+                              <td>02</td>
+                              <td>Maintenance and Reparation</td>
+                              <td>M Peace Plaza <br> <span>G Floor Room 201</span></td>
+                              <td>8:00 am - 8:00 pm</td>
+                         </tr>
+                         <tr>
+                              <td>03</td>
+                              <td>IT Consultation</td>
+                              <td>M Peace Plaza <br> <span>G Floor Room 201</span></td>
+                              <td>24/7</td>
+                         </tr>
+                         <tr>
+                              <td>05</td>
+                              <td>Hosting and Web Maintenance</td>
+                              <td>M Peace Plaza <br> <span>G Floor Room 201</span></td>
+                              <td>24/7</td>
+                         </tr>
+                         <tr>
+                              <td>06</td>
+                              <td>Software Development</td>
+                              <td>M Peace Plaza <br> <span>G Floor Room 201</span></td>
+                              <td>24/7</td>
+                         </tr>
+                    </tbody>
+               </table>
+          </section>
+          <section id="HireMe" class="hireMe">
+               <div class="container">
+                    <h2>Hire me</h2>
+                    <form onsubmit="handleSubmit()">
+                         <div class="group">
+                              <label for="name">Name:</label>
+                              <input type="text" required id="name" name="name" placeholder="Jane....">
+                         </div>
+                         <div class="group">
+                              <label for="email">Email:</label>
+                              <input type="email" required id="email" name="email" placeholder="example@....">
+                         </div>
+                         <div class="group">
+                              <label for="phone">Phone:</label>
+                              <input type="text" id="phone" name="phone" placeholder="+2507....">
+                         </div>
+                         <div class="group">
+                              <label for="message">Message:</label>
+                              <textarea name="message" required id="message" placeholder="Message...." cols="30" rows="5"></textarea>
+                         </div>
+                         <button type="submit">Send</button>
+                         <button type="reset" onclick="hireMe()">Cancel</button>
+                         <p id="success" class="success">Thank you for contactin us! We shall reach you soon.</p>
+                         <button type="button" onclick="hireMe()" id="close">Close</button>
+                    </form>
+               </div>
+               
+          </section>
+     </main>
+     <footer>
+          <p>Copyright &#169; 2023 | All rights reserved</p>
+     </footer>
+     <script src="index.js"></script>
+     
+</body>
+</html>
