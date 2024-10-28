@@ -36,6 +36,13 @@
                     "name": "Sold Out"
                }
           ],
+          "navLinks": [
+               {"name": "About", "dest": "/about"},
+               {"name": "Contact Us", "dest": "/contact"},
+               {"name": "Our Services", "dest": "/services"},
+               {"name": "Rent your Vehicle", "dest": "/auth/signup"},
+               {"name":"Sellers", "dest": "/sellers"}
+          ],
           "actionBtn": "Rent My Vehicle",
           "accountBtn": "Login"
      },

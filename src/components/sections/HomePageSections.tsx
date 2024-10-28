@@ -21,8 +21,8 @@ export const HomeHeroSection:React.FC = () => {
           <section 
                className="w-[95%] md:w-[90%] bg-center bg-cover bg-no-repeat mx-auto my-[10px] rounded-[5px] overflow-hidden " 
                style={inlineStyles}>
-               <div className="w-full aspect-[100/45] md:aspect-[100/30] lg:aspect-[100/25]  px-[5%] md:px-[10%] bg-[#00000095] flex flex-col gap-[10px] items-center justify-center ">
-                    <h3 className="text-gray-300 font-extrabold text-center text-[1.6rem] md:text-[1.8rem] md:w-[60%] ">{messages.heroMessage}</h3>
+               <div className="w-full aspect-[100/50] md:aspect-[100/30] lg:aspect-[100/25]  px-[5%] md:px-[10%] bg-[#00000095] flex flex-col gap-[10px] items-center justify-center ">
+                    <h3 className="text-gray-300 font-extrabold text-center text-[1.4rem] md:text-[1.8rem] md:w-[60%] ">{messages.heroMessage}</h3>
                     {/* <p className="text-orange-400  ">{messages.heroMessageSlogan}</p> */}
                     <div className="w-[80%] md:w-[60%] lg:w-[50%] overflow-hidden bg-gray-400 flex items-center justify-between rounded-[30px] p-[5px] ">
                          <label className="hidden" htmlFor="hero-section-search-input">Search:</label>
