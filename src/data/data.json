@@ -1,0 +1,20 @@
+{
+     "categoryTypes": [
+          {
+               "name":{"en":"Construction Machines", "kn": "Imashini z'ubwubatsi", "fr": "Machines de construction"},
+               "icon": "/images/construction-machines.webp"
+          },
+          {
+               "name":{"en":"Trucks", "kn": "Amakamyo", "fr": "Camions"},
+               "icon":"/images/trucks.jpg"
+          },
+          {
+               "name":{"en":"Buses", "kn": "Amabisi", "fr": "Bus"},
+               "icon":"/images/buses.jpg"
+          },
+          {
+               "name":{"en":"Cars", "kn": "Imodoka", "fr": "Voitures"},
+               "icon": "/images/cars.webp"
+          }
+     ]
+}

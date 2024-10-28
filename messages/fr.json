@@ -1,0 +1,92 @@
+{
+     "header": {
+          "categories": [
+               {
+                    "name": "Houses",
+                    "subs": [
+                         {"name": "Houses for Sale", "id": ""},
+                         {"name": "Houses for Rent", "id": ""}
+                    ],
+                    "icon": ""
+               },
+               {
+                    "name": "Apartments",
+                    "subs": [
+                         {"name": "Apartments for Sale", "id": ""},
+                         {"name": "Apartments for Rent", "id": ""}
+                    ],
+                    "icon": ""
+               },
+               {
+                    "name": "Commercial Property",
+                    "subs": [
+                         {"name": "Commercial Property for Rent", "id": ""},
+                         {"name": "Commercial Property for Sale", "id": ""}
+                    ],
+                    "icon": ""
+               },
+               {
+                    "name": "Land & Plots",
+                    "subs": [
+                         {"name": "Land and plots for Sale"}
+                    ],
+                    "icon": ""
+               },
+               {
+                    "name": "Sold Out"
+               }
+          ],
+          "actionBtn": "Rent My Vehicle",
+          "accountBtn": "Account"
+     },
+     "homePage": {
+          "heroSection": {
+               "heroMessage": "Buy, Sell or Rent Real Estate Property",
+               "heroMessageSlogan": "Wherever you are!",
+               "searchBar": {
+                    "searchBtn": "Search",
+                    "searchCategory": "Select Category...",
+                    "searchLocation": "Select location...",
+                    "searchKeyword": "Keyword"
+               }
+          },
+          "topCategoriesSection": {
+               "title": "Our Categories"
+          },
+          "currentListingsSection": {
+               "title": "Current Listings",
+               "noData": "No Listings found!"
+          },
+          "breakSectionOne": {
+               "title": ""
+          },
+          "partnerSection": {
+               "title": "Our Partners"
+
+          }
+     },
+     "data": {
+          "mainCategories": [
+               {"name": "Apartments for Rent", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
+               {"name": "Apartments for Sale", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
+               {"name": "Commercial Property for Rent", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
+               {"name": "Commercial Property for Sale", "id": "", "icon": "/images/real-estate-image-1000x500.png"}, 
+               {"name": "Houses for Rent", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
+               {"name": "Houses for Sale", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
+               {"name": "Land and plots for Sale", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
+               {"name": "Sold Out", "id": "", "icon": "/images/real-estate-image-1000x500.png"}
+          ]
+     },
+     "footer": {
+          "about": {
+               "title": "Real Estate"
+          },
+          "supportLinks": [
+               {"name": "About Us", "dest": "/about"},
+               {"name": "Contact Us", "dest": "/contact"},
+               {"name": "Our Services", "dest": "/services"},
+               {"name": "Become our Partner", "dest": "/partner"},
+               {"name": "Become our Agent", "dest": "/agent"}
+          ]
+     }
+}
