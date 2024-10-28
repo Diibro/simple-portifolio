@@ -41,7 +41,7 @@ const appData = await fetchAppData();
 const user = await getUserData();
   return (
     <html lang={locale}>
-      <body className="max-w-[1512px] w-full h-auto">
+      <body className="max-w-[1512px] w-full h-auto mx-auto">
         <NextIntlClientProvider messages={messages}>
           <AppProvider appData={appData}>
             <UserProvider userData={user}>

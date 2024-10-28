@@ -13,7 +13,7 @@ const Footer = () => {
      const contactDetails = t.raw("location");
      const isLargerThanTablet = useMediaQuery({query: '(min-width: 768px)' })
      return (
-          <div className="w-full py-[10px] px-[2%] bg-main-primary flex flex-col items-center gap-[5px] ">
+          <div className="w-[98%] 2xl:w-full rounded-[5px]  py-[10px] px-[2%] bg-main-blue-950 flex flex-col items-center gap-[5px] ">
                <div className="w-full flex flex-row items-start flex-wrap justify-between gap-[10px] py-[10px] ">
                     <div className="w-[46%] md:w-[40%] flex flex-row items-start gap-[5px] ">
                          <div>

@@ -39,30 +39,30 @@ const DesktopView:React.FC<IHeader> = ({accountBtn, navLinks, user, actionBtn}) 
      const categoryTypes = Data.categoryTypes;
      const locale = useLocale() as TLocale;
      return (
-          <div className="w-full flex-col shadow-sm hidden md:flex">
-          <div className="w-full flex flex-row justify-between items-center  py-[5px] px-[5%] relative border-b-[1.3px] border-slate-300 ">
-               <div className="w-[50px] h-[50px] border-[1.4px] border-main-blue-600 rounded-[100px] p-[2.5px] overflow-hidden cursor-pointer hover:border-main-secondary">
-                    <MyImage image="/logo/logo.jpg" rounded="100px" />
+          <div className="w-[98%] mx-auto flex-col hidden md:flex py-[5px] gap-[5px] 2xl:w-full ">
+               <div className="w-full flex flex-row justify-between items-center  py-[5px] px-[5px] relative bg-main-blue-950 rounded-[5px] ">
+                    <div className="w-[50px] h-[50px] border-[1.4px] border-main-blue-600 rounded-[100px] p-[2.5px] overflow-hidden cursor-pointer hover:border-main-secondary">
+                         <MyImage image="/logo/logo.jpg" rounded="100px" />
+                    </div>
+                    <div className="w-auto flex items-center gap-[10px] ">
+                         {
+                              navLinks.map((link, index) => <NavLink name={link.name} key={`desktop-view-nav-link-${index}`} dest={link.dest} />)
+                         }
+                    </div>
+                    <div className="w-auto flex flex-row gap-[5px] h-auto items-center">
+                         {user ? 
+                         <Link href={`${user.type === 'seller' ? '/seller' : '/'}`}><Image src={'/images/user-icon.png'} width={40} height={40} alt="profile icon" /></Link>:
+                         <Link href={'/auth/login'} className="text-[0.8rem] font-medium text-white bg-main-orange-600 border-[1.2px] border-main-orange-600 rounded-[5px] py-[5px] px-[20px] transition-all duration-300 hover:bg-white hover:text-main-orange-600 ">{accountBtn}</Link>}
+                    </div>
                </div>
-               <div className="w-auto flex items-center gap-[10px] ">
-                    {
-                         navLinks.map((link, index) => <NavLink name={link.name} key={`desktop-view-nav-link-${index}`} dest={link.dest} />)
-                    }
-               </div>
-               <div className="w-auto flex flex-row gap-[5px] h-auto items-center">
-                    {user ? 
-                    <Link href={`${user.type === 'seller' ? '/seller' : '/'}`}><Image src={'/images/user-icon.png'} width={40} height={40} alt="profile icon" /></Link>:
-                    <Link href={'/auth/login'} className="text-[0.8rem] font-medium text-white bg-main-orange-600 border-[1.2px] border-main-orange-600 rounded-[5px] py-[5px] px-[20px] transition-all duration-300 hover:bg-white hover:text-main-orange-600 ">{accountBtn}</Link>}
+               <div className={`relative top-full left-0 flex flex-row w-full gap-[10px] `}>
+                    {categoryTypes.map(((group,index) => 
+                         <div className="w-auto flex items-center justify-start gap-[10px] cursor-pointer border-[1.2px] border-main-gray-400 p-[2.5px] mx-auto text-main-gray-700 hover:text-main-gray-900 hover:bg-slate-50 rounded-[5px] flex-1 text-center" key={`header-category-group-${index}`} >
+                              <Image src={group.icon} width={50} height={50} className="aspect-[100/80] rounded-[2.5px]" alt={group.name[locale] || "en"}/>
+                              <span className="text-[0.85rem]">{group.name[locale]}</span>
+                         </div> ))}
                </div>
           </div>
-          <div className={`relative py-[10px] px-[5%] top-full left-0 flex flex-row w-full gap-[10px] `}>
-               {categoryTypes.map(((group,index) => 
-                    <div className="w-auto flex items-center justify-start gap-[10px] cursor-pointer border-[1.2px] border-main-gray-400 p-[2.5px] mx-auto text-main-gray-700 hover:text-main-gray-900 hover:bg-slate-50 rounded-[5px] flex-1 text-center" key={`header-category-group-${index}`} >
-                         <Image src={group.icon} width={50} height={50} className="aspect-[100/80] rounded-[2.5px]" alt={group.name[locale] || "en"}/>
-                         <span className="text-[0.85rem]">{group.name[locale]}</span>
-                    </div> ))}
-          </div>
-     </div>
      )
 } 
 
@@ -104,7 +104,7 @@ const MobileView:React.FC<IHeader> = ({accountBtn, navLinks, user, actionBtn}) =
 const NavLink:React.FC<{name: string, dest:string}> = ({name,dest}) => {
      return (
           <Link 
-          className="text-[0.8rem] hover:bg-main-blue-50 rounded-[20px] py-[5px] px-[10px] text-main-gray-900 hover:text-main-blue-950 transition-all duration-200 " 
+          className="text-[0.8rem] hover:bg-main-blue-50 rounded-[20px] py-[5px] px-[10px] text-main-gray-50 hover:text-main-blue-950 transition-all duration-200 " 
           href={dest}>{name}</Link>
      )
 }
