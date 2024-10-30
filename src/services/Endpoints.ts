@@ -10,7 +10,8 @@ const Endpoints = {
           login: 'auth/login',
           getUser: 'auth/get-info',
           logout: 'auth/logout'
-     }
+     },
+     appStats: 'app-stats'
 }
 
 export default Endpoints

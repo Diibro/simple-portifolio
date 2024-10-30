@@ -2,19 +2,22 @@
 
 import { useRouter } from "next/navigation";
 import { BiSolidCategory } from "react-icons/bi";
+import { FaTruck, FaUsers } from "react-icons/fa";
+import { MdOutlineSupervisorAccount } from "react-icons/md";
+import { RiUserShared2Line } from "react-icons/ri";
 
 export default function Dashboard () {
 
      return (
-          <>
+          <div className="w-full">
                <div className="w-full flex flex-row items-center justify-between flex-wrap">
-                    <ContentCard name="Categories" count={6} icon={<BiSolidCategory />} dest="categories" />
-                    <ContentCard name="Vehicles" count={18} icon={<BiSolidCategory />} dest="vehicles" />
-                    <ContentCard name="Dispatchers" count={4} icon={<BiSolidCategory />} dest="dispatchers" />
-                    <ContentCard name="Sellers" count={100} icon={<BiSolidCategory />} dest="sellers" />
-                    <ContentCard name="Clients" count={120} icon={<BiSolidCategory />} dest="clients" />
+                    <ContentCard name="Categories" count={0} icon={<BiSolidCategory />} dest="categories" />
+                    <ContentCard name="Vehicles" count={0} icon={<FaTruck />} dest="vehicles" />
+                    <ContentCard name="Dispatchers" count={0} icon={<RiUserShared2Line />} dest="dispatchers" />
+                    <ContentCard name="Sellers" count={0} icon={<MdOutlineSupervisorAccount />} dest="sellers" />
+                    <ContentCard name="Clients" count={0} icon={<FaUsers />} dest="clients" />
                </div>
-          </>
+          </div>
      )
 }
 

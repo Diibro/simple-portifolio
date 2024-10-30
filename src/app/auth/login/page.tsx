@@ -14,7 +14,7 @@ import { IoArrowBack } from "react-icons/io5";
 
 export default function Page () {
      const [credentials, setcredentials] = useState<{email:string, password: string}>({email:"", password: ""});
-     const [showPassword, setShowPassword] = useState<boolean>(true);
+     const [showPassword, setShowPassword] = useState<boolean>(false);
      const [loading,setLoading] = useState(false);
 
      const router = useRouter()
@@ -52,7 +52,7 @@ export default function Page () {
                          <label htmlFor="login-email" className="text-[0.8rem] font-medium text-gray-600  ">Email:</label>
                          <input 
                               required
-                              className="w-full bg-gray-50 border-[1.2px] border-gray-200 px-[10px] py-[5px] rounded-[5px] focus:border-main-secondary outline-none transition-all duration-150 "
+                              className="w-full bg-gray-50 border-[1.2px] text-[0.9rem] text-main-blue-950 border-gray-200 px-[10px] py-[5px] rounded-[5px] focus:border-main-secondary outline-none transition-all duration-150 "
                               type="email" 
                               name="login-email" 
                               id="login-email"  
@@ -64,7 +64,7 @@ export default function Page () {
                          <div className="w-full relative">
                               <input 
                                    required
-                                   className="w-full bg-gray-50 border-[1.2px] border-gray-200 px-[10px] py-[5px] rounded-[5px] focus:border-main-secondary outline-none transition-all duration-150 "
+                                   className="w-full bg-gray-50 border-[1.2px] border-gray-200 px-[10px] py-[5px] text-[0.9rem] text-main-blue-950 rounded-[5px] focus:border-main-secondary outline-none transition-all duration-150 "
                                    type={showPassword? "text" :"password"} 
                                    name="login-password" 
                                    id="login-password" 

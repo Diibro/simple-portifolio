@@ -17,7 +17,7 @@ export default  async function DashboardLayout({
           const checkRole = async() => {
                const cookieStore = cookies();
 
-               const token = cookieStore.get('authToken')?.value;
+               const token =(await cookieStore).get('authToken')?.value;
                if(token){
                     const user = await fetchUserData(token)
                     if(user && user.type === 'seller'){

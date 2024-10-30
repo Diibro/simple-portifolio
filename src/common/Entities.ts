@@ -43,4 +43,5 @@ export class CUser {
      password!: string
      status!: string
      createdAt!: Date
+     icon?:string
 }

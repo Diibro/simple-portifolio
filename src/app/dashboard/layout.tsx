@@ -1,5 +1,5 @@
 
-import DashboardHeader from "@/components/dashboard/DashboardHeader";
+import { DashboardHeaderDesktopView, DashboardHeaderMobileView } from "@/components/dashboard/DashboardHeader";
 import DashboardPage from "@/components/dashboard/DashboardPage";
 import fetchUserData from "@/util/authFunctions";
 import { Metadata } from "next";
@@ -19,9 +19,9 @@ export default  async function DashboardLayout({
           const checkRole = async() => {
                const cookieStore = cookies();
 
-               const token = cookieStore.get('authToken')?.value;
+               const token =  (await cookieStore).get('authToken')?.value;
                if(token){
-                    const user = await fetchUserData(token)
+                    const user = await fetchUserData(token);
                     if(user && user.role === 'admin'){
                          return;
                     }
@@ -33,13 +33,13 @@ export default  async function DashboardLayout({
           await checkRole();
 
      return (
-          <html lang={"en"}>
-               <body className="max-w-[1512px] w-screen h-screen flex flex-col-reverse md:flex-row items-center justify-between md:justify-evenly md:p-[10px] py-[5px] overflow-hidden">
-                    <DashboardHeader />
-                    <DashboardPage>
-                         {children}
-                    </DashboardPage>
-               </body>
-          </html>
+          
+          <div className="mx-auto w-full h-screen gap-[5px] flex flex-col md:flex-row  items-center justify-between md:justify-evenly md:p-[10px] py-[5px] overflow-hidden">
+               <DashboardHeaderDesktopView />
+               <DashboardPage>
+                    {children}
+               </DashboardPage>
+               <DashboardHeaderMobileView />
+          </div>
      );
 }

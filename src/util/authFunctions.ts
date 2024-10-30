@@ -8,6 +8,7 @@ export async function customLogin(userEmail:string, password:string) {
           const res = await ClientServer.post({ userEmail, password }, Endpoints.auth.login);
           if (res) {
                const {token, role} = res; 
+               console.log(res);
                const result = await signIn("credentials", {
                     redirect: false, 
                     token: token,  

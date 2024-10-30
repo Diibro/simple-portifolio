@@ -7,7 +7,7 @@ const locales = ['en', 'kin', 'fr'];
 
 export default getRequestConfig(async () => {
      // Retrieve the locale from the NEXT_LOCALE cookie
-     const localeCookie = cookies().get('NEXT_LOCALE')?.value || 'en'; // Default to 'en' if the cookie is not set
+     const localeCookie = (await  cookies()).get('NEXT_LOCALE')?.value || 'en'; // Default to 'en' if the cookie is not set
 
      // Validate the locale from the cookie
      if (!locales.includes(localeCookie)) {
