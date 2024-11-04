@@ -4,14 +4,13 @@ import { FiMenu } from "react-icons/fi";
 import Data from "@/data/data.json";
 
 import MyImage from "./Images/MyImage"
-import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
-import { TLocale } from "@/common/CommonTypes";
 import Image from "next/image";
 import { useUser } from "@/context/UserContext";
 import { CUser } from "@/common/Entities";
+import { useMessages } from "@/context/MessagesContext";
 
 interface IHeader {
      actionBtn?: string
@@ -21,10 +20,11 @@ interface IHeader {
 }
 
 const Header = () => {
-     const t = useTranslations('header');
-     const actionBtnStr = t("actionBtn");
-     const accountBtnStr = t("accountBtn");
-     const navLinks:Array<{name:string, dest: string}> = t.raw('navLinks');
+     const {messages} = useMessages();
+     const {header} = messages;
+     const actionBtnStr = header.actionBr;
+     const accountBtnStr = header.accountBtn;
+     const navLinks:Array<{name:string, dest: string}> = header.navLinks;
      const {user} = useUser();
 
      return (
@@ -37,7 +37,7 @@ const Header = () => {
 
 const DesktopView:React.FC<IHeader> = ({accountBtn, navLinks, user, actionBtn}) => {
      const categoryTypes = Data.categoryTypes;
-     const locale = useLocale() as TLocale;
+     const {locale} = useMessages();
      return (
           <div className="w-[98%] mx-auto flex-col hidden md:flex py-[5px] gap-[5px] 2xl:w-full ">
                <div className="w-full flex flex-row justify-between items-center  py-[5px] px-[5px] relative bg-main-blue-950 rounded-[5px] ">
@@ -70,7 +70,7 @@ const DesktopView:React.FC<IHeader> = ({accountBtn, navLinks, user, actionBtn}) 
 const MobileView:React.FC<IHeader> = ({accountBtn, navLinks, user, actionBtn}) => {
      const [showCategories, setShowCategories] = useState(false);
      const categoryTypes = Data.categoryTypes;
-     const locale = useLocale() as TLocale;
+     const {locale} = useMessages();
      return (
           <div className="w-full flex flex-col relative shadow-sm px-[1%] md:hidden ">
                <div className="w-full flex flex-row justify-between p-[5px] relative ">

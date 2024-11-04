@@ -36,57 +36,80 @@
                     "name": "Sold Out"
                }
           ],
+          "navLinks": [
+               {"name": "About", "dest": "/about"},
+               {"name": "Contact Us", "dest": "/contact"},
+               {"name": "Our Services", "dest": "/services"},
+               {"name": "Rent your Vehicle", "dest": "/auth/signup"},
+               {"name":"Sellers", "dest": "/sellers"}
+          ],
           "actionBtn": "Rent My Vehicle",
-          "accountBtn": "Account"
+          "accountBtn": "Login"
      },
-     "homePage": {
-          "heroSection": {
-               "heroMessage": "Buy, Sell or Rent Real Estate Property",
-               "heroMessageSlogan": "Wherever you are!",
-               "searchBar": {
-                    "searchBtn": "Search",
-                    "searchCategory": "Select Category...",
-                    "searchLocation": "Select location...",
-                    "searchKeyword": "Keyword"
-               }
-          },
-          "topCategoriesSection": {
-               "title": "Our Categories"
-          },
-          "currentListingsSection": {
-               "title": "Current Listings",
-               "noData": "No Listings found!"
-          },
-          "breakSectionOne": {
-               "title": ""
-          },
-          "partnerSection": {
-               "title": "Our Partners"
+     "pages": {
+          "homePage": {
+               "heroSection": {
+                    "heroMessage": "The best place to rent any vehicle of your choice in Africa",
+                    "heroMessageSlogan": "Best Service ever!",
+                    "searchBar": {
+                         "searchBtn": "Search",
+                         "searchKeyword": "Keyword"
+                    }
+               },
+               "topCategoriesSection": {
+                    "title": "Our Categories"
+               },
+               "currentListingsSection": {
+                    "title": "Available Vehicles",
+                    "noData": "No available vehicles found!"
+               },
+               "breakSectionOne": {
+                    "title": "Break section one",
+                    "message": "break section information one"
+               },
+               "partnerSection": {
+                    "title": "Our Partners"
 
+               },
+               "rentedVehiclesSection": {
+                    "title": "Available Vehicles",
+                    "noData": "No available vehicles found!"
+               }
           }
-     },
-     "data": {
-          "mainCategories": [
-               {"name": "Apartments for Rent", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
-               {"name": "Apartments for Sale", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
-               {"name": "Commercial Property for Rent", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
-               {"name": "Commercial Property for Sale", "id": "", "icon": "/images/real-estate-image-1000x500.png"}, 
-               {"name": "Houses for Rent", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
-               {"name": "Houses for Sale", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
-               {"name": "Land and plots for Sale", "id": "", "icon": "/images/real-estate-image-1000x500.png"},
-               {"name": "Sold Out", "id": "", "icon": "/images/real-estate-image-1000x500.png"}
-          ]
      },
      "footer": {
           "about": {
-               "title": "Real Estate"
+               "title": "Car Rent",
+               "description":"We are the leading car rental platform offering a wide range of vehicles, from trucks and buses to cars and construction machinery. Whether for personal, business, or construction needs, we provide flexible rental solutions to suit you."
           },
-          "supportLinks": [
-               {"name": "About Us", "dest": "/about"},
-               {"name": "Contact Us", "dest": "/contact"},
-               {"name": "Our Services", "dest": "/services"},
-               {"name": "Become our Partner", "dest": "/partner"},
-               {"name": "Become our Agent", "dest": "/agent"}
-          ]
+          "supportLinks":{
+               "name":"Support Links",
+               "links":  [
+                    {"name": "About Us", "dest": "/about"},
+                    {"name": "Contact Us", "dest": "/contact"},
+                    {"name": "Our Services", "dest": "/services"},
+                    {"name": "Rent your Vehicle", "dest": "/auth"}
+               ]
+          },
+          "location": {
+               "name":"Contact us",
+               "location":"Kigali, Rwanda",
+               "email": "carrent@gmail.com",
+               "phone": "+250780795232",
+               "message":"You can reach out to us for more information via:"
+
+          }
+     },
+     "common": {
+          "listing": {
+               "addedDate": "Added on:",
+               "viewBtn":"View Vehicle",
+               "rentBtn": "Rent Vehicle"
+          },
+          "uploadMessages": {
+               "uploadBtn": "Upload",
+               "resetBtn": "Reset",
+               "imageUpload": "Select File"
+          }
      }
 }

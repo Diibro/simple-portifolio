@@ -1,16 +1,15 @@
 'use client';
 
-import { useTranslations } from "next-intl";
 import MyImage from "./Images/MyImage"
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import { FaLocationDot } from "react-icons/fa6";
+import {footer} from '@/data/en.json';
 
 const Footer = () => {
-     const t = useTranslations('footer');
-     const content = t.raw("about");
-     const supportLinks = t.raw("supportLinks");
-     const contactDetails = t.raw("location");
+     const content = footer.about;
+     const supportLinks = footer.supportLinks;
+     const contactDetails = footer.location;
      const isLargerThanTablet = useMediaQuery({query: '(min-width: 768px)' })
      return (
           <div className="w-[98%] 2xl:w-full rounded-[5px]  py-[10px] px-[2%] bg-main-blue-950 flex flex-col items-center gap-[5px] ">

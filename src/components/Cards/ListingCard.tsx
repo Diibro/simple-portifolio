@@ -1,19 +1,18 @@
 'use client';
 import ImageSlider from "../Images/ImageSlider";
-import { useLocale, useTranslations } from "next-intl";
-import { TLocale } from "@/common/CommonTypes";
 import { getDate } from "@/util/DateFunctions";
 import { IListing } from "@/common/Interfaces";
 import { useRouter } from "next/navigation";
+import { useMessages } from "@/context/MessagesContext";
 
 interface IListingCard {
      listing: IListing
 }
 
 export const ListingCardRow:React.FC<IListingCard> = ({listing}) => {
-     const locale = useLocale() as TLocale;
-     const t = useTranslations('common');
-     const messages = t.raw('listing');
+     const {locale} = useMessages();
+     const {common} = useMessages().messages; 
+     const messages = common.listing;
      return (
           <div className="w-full border-[1.2px] border-slate-300 rounded-[5px] p-[5px] aspect-[100/40] ">
                <div className="w-[40%] h-full ">
@@ -31,9 +30,9 @@ export const ListingCardRow:React.FC<IListingCard> = ({listing}) => {
 }
 
 export const ListingCardVertical:React.FC<IListingCard> = ({listing}) => {
-     const locale = useLocale() as TLocale;
-     const t = useTranslations('common');
-     const messages = t.raw('listing');
+     const {locale} = useMessages();
+     const {common} = useMessages().messages; 
+     const messages = common.listing;
      const router = useRouter();
      const viewListing = () => {
           return router.push(`/listing/${listing.id}`)

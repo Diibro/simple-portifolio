@@ -46,35 +46,40 @@
           "actionBtn": "Rent My Vehicle",
           "accountBtn": "Login"
      },
-     "pages": {
-          "homePage": {
-               "heroSection": {
-                    "heroMessage": "The best place to rent any vehicle of your choice in Africa",
-                    "heroMessageSlogan": "Best Service ever!",
-                    "searchBar": {
-                         "searchBtn": "Search",
-                         "searchKeyword": "Keyword"
-                    }
-               },
-               "topCategoriesSection": {
-                    "title": "Our Categories"
-               },
-               "currentListingsSection": {
-                    "title": "Available Vehicles",
-                    "noData": "No available vehicles found!"
-               },
-               "breakSectionOne": {
-                    "title": "Break section one",
-                    "message": "break section information one"
-               },
-               "partnerSection": {
-                    "title": "Our Partners"
-
-               },
-               "rentedVehiclesSection": {
-                    "title": "Available Vehicles",
-                    "noData": "No available vehicles found!"
+     "homePage": {
+          "heroSection": {
+               "heroMessage": "The best place to rent any vehicle of your choice in Africa",
+               "heroMessageSlogan": "Best Service ever!",
+               "searchBar": {
+                    "searchBtn": "Search",
+                    "searchKeyword": "Keyword"
                }
+          },
+          "topCategoriesSection": {
+               "title": "Our Categories"
+          },
+          "currentListingsSection": {
+               "title": "Available Vehicles",
+               "noData": "No available vehicles found!"
+          },
+          "breakSectionOne": {
+               "title": "Break section one",
+               "message": "break section information one"
+          },
+          "partnerSection": {
+               "title": "Our Partners"
+
+          },
+          "rentedVehiclesSection": {
+               "title": "Available Vehicles",
+               "noData": "No available vehicles found!"
+          }
+     },
+     "data": {
+          "uploadMessages": {
+               "uploadBtn": "Upload",
+               "resetBtn": "Reset",
+               "imageUpload": "Select File"
           }
      },
      "footer": {
@@ -105,11 +110,6 @@
                "addedDate": "Added on:",
                "viewBtn":"View Vehicle",
                "rentBtn": "Rent Vehicle"
-          },
-          "uploadMessages": {
-               "uploadBtn": "Upload",
-               "resetBtn": "Reset",
-               "imageUpload": "Select File"
           }
      }
 }

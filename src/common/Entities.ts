@@ -45,3 +45,10 @@ export class CUser {
      createdAt!: Date
      icon?:string
 }
+
+export class CMessages {
+     header: any
+     pages: any
+     footer: any
+     common: any
+}

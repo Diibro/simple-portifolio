@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
 import MainNotificationContainer from "@/components/Notifications/ManNotificationCard";
 import { UserProvider } from "@/context/UserContext";
 import fetchUserData from "@/util/authFunctions";
 import { cookies } from "next/headers";
 import { AppProvider } from "@/context/AppContext";
 import { fetchAppData } from "@/util/DataFuncs";
+import { MessagesProvider } from "@/context/MessagesContext";
 
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default async function RootLayout({
   params: {locale: string};
 }>) {
   const {locale} = params;
-  const messages = await getMessages();
 
   const getUserData = async() => {
     const cookieStore =await  cookies();
@@ -42,14 +40,14 @@ const user = await getUserData();
   return (
     <html lang={locale}>
       <body className="max-w-[1512px] w-full h-auto mx-auto">
-        <NextIntlClientProvider messages={messages}>
+        <MessagesProvider currentLocale="en">
           <AppProvider appData={appData}>
             <UserProvider userData={user}>
               {children}
             </UserProvider>
           </AppProvider>
           <MainNotificationContainer />
-        </NextIntlClientProvider>
+        </MessagesProvider>
       </body>
     </html>
   );

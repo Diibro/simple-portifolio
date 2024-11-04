@@ -2,17 +2,18 @@
 
 import { IListing } from "@/common/Interfaces";
 import { SampleListings } from "@/data/SampleListings";
-import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import ListingsContainer from "../listing/ListingContainer";
+import { useMessages } from "@/context/MessagesContext";
 const heroSectionImage = "/images/hero-image-1.jpg";
 
 
 
 export const HomeHeroSection:React.FC = () => {
-     const t = useTranslations("homePage");
-     const messages = t.raw("heroSection");
+     const {pages} = useMessages().messages;
+     const {homePage} = pages;
+     const messages = homePage.heroSection;
      const inlineStyles = {
           backgroundImage: `url('${heroSectionImage}')`
      }
@@ -36,8 +37,9 @@ export const HomeHeroSection:React.FC = () => {
 
 export const HomeCurrentListingsSection = () => {
      const [listings, setListings] = useState<Array<IListing>>(SampleListings);
-     const t = useTranslations("homePage");
-     const messages = t.raw("currentListingsSection");
+     const {pages} = useMessages().messages;
+     const {homePage} = pages;
+     const messages = homePage.currentListingsSection;
      return (
           <section className="w-full bg-center bg-cover bg-no-repeat mx-auto my-[10px] rounded-[10px] overflow-hidden ">
                <div className="w-full ">
@@ -54,8 +56,9 @@ export const HomeCurrentListingsSection = () => {
 }
 
 export const HomeBreakSectionOne = () => {
-     const t = useTranslations("homePage");
-     const messages = t.raw("breakSectionOne");
+     const {pages} = useMessages().messages;
+     const {homePage} = pages;
+     const messages = homePage.breakSectionOne;
      const inlineStyles = {
           backgroundImage: `url('${heroSectionImage}')`
      }

@@ -3,7 +3,7 @@ import { CCategory } from "@/common/Entities";
 import { ILocaleValues } from "@/common/Interfaces";
 import { ClientPageContainer } from "@/components/containers/PageContainers";
 import ClientPageWrapper from "@/components/Wrappers/ClientPageWrapper";
-import { useLocale } from "next-intl";
+import { useMessages } from "@/context/MessagesContext";
 
 export default function categoryPage() {
      return (
@@ -17,7 +17,7 @@ export default function categoryPage() {
 }
 
 const CategoriesRow = ({categoryGroup, categories} : {categoryGroup: ILocaleValues, categories:Array<CCategory>}) => {
-     const locale = useLocale() as TLocale;
+     const {locale} = useMessages()
 
      return (
           <div>

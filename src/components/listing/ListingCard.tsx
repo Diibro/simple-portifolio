@@ -1,18 +1,17 @@
 import { useRouter } from "next/navigation";
 import ImageSlider from "../Images/ImageSlider";
-import { useLocale, useTranslations } from "next-intl";
-import { TLocale } from "@/common/CommonTypes";
 import { IListing } from "@/common/Interfaces";
 import { getDate } from "@/util/DateFunctions";
+import { useMessages } from "@/context/MessagesContext";
 
 interface IListingCard {
      listing: IListing
 }
 
 export const ListingCardVertical:React.FC<IListingCard> = ({listing}) => {
-     const locale = useLocale() as TLocale;
-     const t = useTranslations('common');
-     const messages = t.raw('listing');
+     const {locale} = useMessages();
+     const {common} = useMessages().messages; 
+     const messages = common.listing;
      const router = useRouter();
      const viewListing = () => {
           return router.push(`/listing/${listing.id}`)
