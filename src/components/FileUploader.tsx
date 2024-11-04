@@ -2,10 +2,10 @@
 
 import { ENotificationType } from "@/common/CommonTypes";
 import { IFileUploader } from "@/common/Interfaces";
+import { useMessages } from "@/context/MessagesContext";
 import Endpoints from "@/services/Endpoints";
 import { ClientServer } from "@/services/Server";
 import { showMainNotification } from "@/util/NotificationFuncs";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
@@ -16,8 +16,8 @@ interface iFileUploaderInterface {
 
 
 const FileUploader: React.FC<iFileUploaderInterface> = ({content}) => {
-     const data = useTranslations("data");
-     const uploadMessages = data.raw("uploadMessages");
+     const data = useMessages().messages;
+     const {uploadMessages} = data.common;
      const [imageFile, setImageFile] = useState<Blob>();
      const [imageFiles, setImageFiles] = useState<Array<Blob>>([]);
      // const [uploadProgress, setUploadProgress] = useState(0);
@@ -51,7 +51,7 @@ const FileUploader: React.FC<iFileUploaderInterface> = ({content}) => {
                imageFiles.forEach(file => formData.append('files', file));
                const res = await ClientServer.post(formData, Endpoints.uploadMany);
                if(res) {
-                    content.multicb && content.multicb(res);
+                    if(content.multicb)  content.multicb(res);
                     showMainNotification("Uploaded the files successfully", ENotificationType.PASS);
                }else {
                     showMainNotification("Error whle uploading the files", ENotificationType.FAIL);

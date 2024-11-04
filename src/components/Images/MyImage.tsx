@@ -1,8 +1,6 @@
 'use client';
 
 
-// type roundValues = 'full' | 'md' | 'sm' | 'lg' | 'xl' | '2xl' | 'none';
-
 interface IImage {
      image: string
      action?: (arg0: unknown) => unknown 
