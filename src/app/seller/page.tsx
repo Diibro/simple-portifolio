@@ -19,16 +19,16 @@ import { useEffect, useState } from "react";
 const Page = () => {
      const {user} = useUser();
      const [vehicles,setVehicles] = useState<Array<IListing>>([]);
-     const fetchListings = async () => {
-          const res = await ClientServer.get(`${Endpoints.listing}?sellerId=${user?.id}`)
-          if(res && res.length && Array.isArray(res)){
-               setVehicles(res);
-          }
-     }
+     
      useEffect(() => {
-          console.log(user);
+          const fetchListings = async () => {
+               const res = await ClientServer.get(`${Endpoints.listing}?sellerId=${user?.id}`)
+               if(res && res.length && Array.isArray(res)){
+                    setVehicles(res);
+               }
+          }
           (async () => await fetchListings())();
-     },[])
+     },[user]);
      return (
           <>
                <HeroSection />

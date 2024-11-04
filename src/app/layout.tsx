@@ -7,6 +7,7 @@ import { cookies } from "next/headers";
 import { AppProvider } from "@/context/AppContext";
 import { fetchAppData } from "@/util/DataFuncs";
 import { MessagesProvider } from "@/context/MessagesContext";
+import SessionWrapper from "@/components/Wrappers/SessionWrapper";
 
 
 export const metadata: Metadata = {
@@ -42,9 +43,11 @@ const user = await getUserData();
       <body className="max-w-[1512px] w-full h-auto mx-auto">
         <MessagesProvider currentLocale="en">
           <AppProvider appData={appData}>
-            <UserProvider userData={user}>
-              {children}
-            </UserProvider>
+            <SessionWrapper>
+              <UserProvider userData={user}>
+                {children}
+              </UserProvider>
+            </SessionWrapper>
           </AppProvider>
           <MainNotificationContainer />
         </MessagesProvider>
