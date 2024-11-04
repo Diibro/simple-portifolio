@@ -1,4 +1,4 @@
-import { TLocale } from "@/common/CommonTypes";
+
 import { CCategory } from "@/common/Entities";
 import { ILocaleValues } from "@/common/Interfaces";
 import { ClientPageContainer } from "@/components/containers/PageContainers";

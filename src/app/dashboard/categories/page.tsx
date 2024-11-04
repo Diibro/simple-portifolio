@@ -1,18 +1,18 @@
 'use client'
 
-import { ENotificationType, TLocale } from "@/common/CommonTypes";
+import { ENotificationType,} from "@/common/CommonTypes";
 import { CCategory } from "@/common/Entities";
 import { ICategory, ICategoryFeature, IFileUploader, ILocaleValues } from "@/common/Interfaces";
 import FileUploader from "@/components/FileUploader";
 import MyImage from "@/components/Images/MyImage";
 import Endpoints from "@/services/Endpoints";
 import { ClientServer } from "@/services/Server";
-import { useLocale } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import appData from '@/data/data.json';
 import { showMainNotification } from "@/util/NotificationFuncs";
+import { useMessages } from "@/context/MessagesContext";
 
 interface ICategoryRow {
      category: CCategory
@@ -70,7 +70,7 @@ const Page = () => {
 
 
 const CategoryRow:React.FC<ICategoryRow> = ({category}) => {
-     const locale = useLocale() as TLocale;
+     const {locale} = useMessages();
 
      const toggleStatus = async () => {
           const updateCategory: ICategory = {

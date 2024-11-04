@@ -1,15 +1,15 @@
 'use client';
-import { ENotificationType, TLocale } from "@/common/CommonTypes";
+import { ENotificationType } from "@/common/CommonTypes";
 import { CUser } from "@/common/Entities";
-import { ICategory, ICategoryFeature, IFileUploader, IListing, IListingFeature, ILocaleValues, IUser } from "@/common/Interfaces";
+import { ICategory,IFileUploader, IListing, IListingFeature, ILocaleValues, IUser } from "@/common/Interfaces";
 import FileUploader from "@/components/FileUploader";
 import ListingsContainer from "@/components/listing/ListingContainer";
 import { useAppData } from "@/context/AppContext";
+import { useMessages } from "@/context/MessagesContext";
 import { useUser } from "@/context/UserContext";
 import Endpoints from "@/services/Endpoints";
 import { ClientServer } from "@/services/Server";
 import { showMainNotification } from "@/util/NotificationFuncs";
-import { useLocale } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -108,7 +108,7 @@ const AddVehicleForm = ({user, cb}: {user: CUser | null, cb:(vehicle: IListing |
      const {data} = useAppData();
      const categories = data?.categories;
 
-     const locale = useLocale() as TLocale;
+     const {locale} = useMessages();
      const sampleLocation = {country: "Rwanda", district: "Kigali", sector: "Nyarugenge", Cartien: ""}
 
      const [name, setName] = useState<ILocaleValues>({en:"", kn:"", fr:""})
