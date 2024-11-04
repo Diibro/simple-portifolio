@@ -2,7 +2,6 @@
 
 import MyImage from "./Images/MyImage"
 import Link from "next/link";
-import { useMediaQuery } from "react-responsive";
 import { FaLocationDot } from "react-icons/fa6";
 import {footer} from '@/data/en.json';
 
@@ -10,19 +9,14 @@ const Footer = () => {
      const content = footer.about;
      const supportLinks = footer.supportLinks;
      const contactDetails = footer.location;
-     const isLargerThanTablet = useMediaQuery({query: '(min-width: 768px)' })
      return (
           <div className="w-[98%] 2xl:w-full rounded-[5px]  py-[10px] px-[2%] bg-main-blue-950 flex flex-col items-center gap-[5px] ">
                <div className="w-full flex flex-row items-start flex-wrap justify-between gap-[10px] py-[10px] ">
                     <div className="w-[46%] md:w-[40%] flex flex-row items-start gap-[5px] ">
                          <div>
-                              {
-                                   isLargerThanTablet ? 
-                                   <div className="w-[100px] h-[100px] border-[1.3px] border-slate-300 rounded-[100px] p-[2.5px] overflow-hidden cursor-pointer hover:border-main-secondary">
-                                        <MyImage image="/logo/logo.jpg" rounded="100px" />
-                                   </div>
-                                   :null
-                              }
+                              <div className="hidden md:flex w-[100px] h-[100px] border-[1.3px] border-slate-300 rounded-[100px] p-[2.5px] overflow-hidden cursor-pointer hover:border-main-secondary">
+                                   <MyImage image="/logo/logo.jpg" rounded="100px" />
+                              </div>
                          </div>
                          <div>
                               <h3 className="text-slate-100 text-[1.1rem] font-bold ">{content.title}</h3>
