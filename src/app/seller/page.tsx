@@ -53,7 +53,8 @@ const HeroSection = () => {
 
      const updateUserListings = (vehicle: IListing  | null) => {
           if(vehicle) {
-               setUserListings(prev => ([vehicle,...prev]))
+               setUserListings(prev => ([vehicle,...prev]));
+               console.log(userListings)
           }
      }
      return (
@@ -132,6 +133,8 @@ const AddVehicleForm = ({user, cb}: {user: CUser | null, cb:(vehicle: IListing |
      const updateCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
           
           if(categories && categories.length){
+               // to remove unused cb
+               cb(null);
                const selectedId = e.target.value;
                const category: ICategory | undefined = categories.find(cat => cat.id == selectedId);
                if(category) {
@@ -302,7 +305,7 @@ const AddVehicleForm = ({user, cb}: {user: CUser | null, cb:(vehicle: IListing |
                                                   limit: 5,
                                                   close: () => setUploadOptions({content:undefined, show: false}),
                                                   multicb:(res) => setVehicle(prev => ({...prev, features: {...(prev.features), otherImages: res}})),
-                                                  cb: (res) => {} }, show: true})}
+                                                  cb: (res) => {console.log(res)} }, show: true})}
                                    >Choose Images</button>
                                    {vehicle?.features.otherImages && vehicle.features.otherImages.length > 0 && 
                                         <div className="w-full grid-cols-3 md:grid-cols-4 lg:grid-cols-6">

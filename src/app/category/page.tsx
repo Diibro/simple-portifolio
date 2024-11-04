@@ -1,9 +1,9 @@
 
-import { CCategory } from "@/common/Entities";
-import { ILocaleValues } from "@/common/Interfaces";
+// import { CCategory } from "@/common/Entities";
+// import { ILocaleValues } from "@/common/Interfaces";
 import { ClientPageContainer } from "@/components/containers/PageContainers";
 import ClientPageWrapper from "@/components/Wrappers/ClientPageWrapper";
-import { useMessages } from "@/context/MessagesContext";
+// import { useMessages } from "@/context/MessagesContext";
 
 export default function categoryPage() {
      return (
@@ -16,15 +16,15 @@ export default function categoryPage() {
      )
 }
 
-const CategoriesRow = ({categoryGroup, categories} : {categoryGroup: ILocaleValues, categories:Array<CCategory>}) => {
-     const {locale} = useMessages()
+// const CategoriesRow = ({categoryGroup, categories} : {categoryGroup: ILocaleValues, categories:Array<CCategory>}) => {
+//      const {locale} = useMessages()
 
-     return (
-          <div>
-               <div>{categoryGroup[locale]}</div>
-               <div>
+//      return (
+//           <div>
+//                <div>{categoryGroup[locale]}</div>
+//                <div>
 
-               </div>
-          </div>
-     )
-}  
+//                </div>
+//           </div>
+//      )
+// }  

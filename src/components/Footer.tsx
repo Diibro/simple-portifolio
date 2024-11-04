@@ -1,11 +1,13 @@
 'use client';
 
+import { useMessages } from "@/context/MessagesContext";
 import MyImage from "./Images/MyImage"
 import Link from "next/link";
 import { FaLocationDot } from "react-icons/fa6";
-import {footer} from '@/data/en.json';
 
 const Footer = () => {
+     const {messages} = useMessages();
+     const footer = messages.footer;
      const content = footer.about;
      const supportLinks = footer.supportLinks;
      const contactDetails = footer.location;

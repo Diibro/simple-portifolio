@@ -2,7 +2,7 @@
 
 import { IListing } from "@/common/Interfaces";
 import { SampleListings } from "@/data/SampleListings";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import ListingsContainer from "../listing/ListingContainer";
 import { useMessages } from "@/context/MessagesContext";
@@ -40,6 +40,9 @@ export const HomeCurrentListingsSection = () => {
      const {pages} = useMessages().messages;
      const {homePage} = pages;
      const messages = homePage.currentListingsSection;
+     useEffect(() => {
+          setListings(SampleListings);
+     }, [])
      return (
           <section className="w-full bg-center bg-cover bg-no-repeat mx-auto my-[10px] rounded-[10px] overflow-hidden ">
                <div className="w-full ">
