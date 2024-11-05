@@ -8,7 +8,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import Endpoints from "@/services/Endpoints";
 import { ClientServer } from "@/services/Server";
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
      providers: [
           GoogleProvider({
                clientId: process.env.GOOGLE_CLIENT_ID ?? "",
