@@ -11,8 +11,8 @@ import SessionWrapper from "@/components/Wrappers/SessionWrapper";
 
 
 export const metadata: Metadata = {
-  title: "Car rent system",
-  description: "Best platform to rent your car",
+  title: "Tira Car",
+  description: "Best platform to rent your car.",
 };
 
 export default async function RootLayout({

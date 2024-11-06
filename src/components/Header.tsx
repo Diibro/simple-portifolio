@@ -41,8 +41,11 @@ const DesktopView:React.FC<IHeader> = ({accountBtn, navLinks, user, actionBtn}) 
      return (
           <div className="w-[98%] mx-auto flex-col hidden md:flex py-[5px] gap-[5px] 2xl:w-full ">
                <div className="w-full flex flex-row justify-between items-center  py-[5px] px-[5px] relative bg-main-blue-950 rounded-[5px] ">
-                    <div className="w-[50px] h-[50px] border-[1.4px] border-main-blue-600 rounded-[100px] p-[2.5px] overflow-hidden cursor-pointer hover:border-main-secondary">
-                         <MyImage image="/logo/logo.jpg" rounded="100px" />
+                    <div className="w-auto flex gap-[5px] items-center justify-start">
+                         <div className="w-[50px] h-[50px] border-[1.4px] border-main-blue-600 rounded-[100px] p-[2.5px] overflow-hidden cursor-pointer hover:border-main-secondary">
+                              <MyImage image="/logo/logo.jpg" rounded="100px" />
+                         </div>
+                         <h1 className="text-[1.2rem] text-main-blue-50 font-bold ">Tiracar</h1>
                     </div>
                     <div className="w-auto flex items-center gap-[10px] ">
                          {
